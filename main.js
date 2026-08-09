@@ -1,35 +1,35 @@
 /*=============== SHOW & CLOSE MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-    navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close')
+  navToggle = document.getElementById('nav-toggle'),
+  navClose = document.getElementById('nav-close')
 
 /* Show menu */
 if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu')
-    })
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu')
+  })
 }
 
 /* Hide menu */
 if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show-menu')
-    })
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu')
+  })
 }
 
 /*=============== REMOVE MOBILE MENU ===============*/
 const navLink = document.querySelectorAll('.nav__link, .nav__contact')
 
 const linkAction = () => {
-    const navMenu = document.getElementById('nav-menu')
-    navMenu.classList.remove('show-menu')
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== HOME TEXT CIRCULAR ===============*/
 const homeText = document.getElementById('home-text'),
-      letters = homeText.textContent.trim().split(''),
-      angleStep = 360 / letters.length
+  letters = homeText.textContent.trim().split(''),
+  angleStep = 360 / letters.length
 
 homeText.textContent = ''
 
@@ -43,7 +43,7 @@ letters.forEach((char, i) => {
 
 /*=============== HOME TYPED JS ===============*/
 const typedHome = new Typed('#home-typed', {
-  strings: ['Aspiring', 'Web Developer', ' Freelancer'],
+  strings: [' data analyst', 'Aspiring', 'Web Developer', ' Freelancer'],
   typeSpeed: 60,
   backSpeed: 30,
   backDelay: 2000,
@@ -51,10 +51,10 @@ const typedHome = new Typed('#home-typed', {
 })
 
 /*=============== CHANGE HEADER STYLES ===============*/
-const scrollHeader = () =>{
+const scrollHeader = () => {
   const header = document.getElementById('header')
   this.scrollY >= 50 ? header.classList.add('scroll-header')
-                      : header.classList.remove('scroll-header')
+    : header.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
 
@@ -79,7 +79,7 @@ const swiperWork = new Swiper('.work__swiper', {
 
 /*=============== EXPERIENCE TABS ===============*/
 const experienceTabs = document.querySelectorAll('.experience__tab'),
-      experiencePanels = document.querySelectorAll('.experience__panel')
+  experiencePanels = document.querySelectorAll('.experience__panel')
 
 experienceTabs.forEach(tab => {
   tab.addEventListener('click', () => {
@@ -97,35 +97,35 @@ experienceTabs.forEach(tab => {
 /*=============== SERVICES ACCORDION ===============*/
 const canvas = document.getElementById('footer-net');
 const ctx = canvas.getContext('2d');
-function resize(){ canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
 resize();
 window.addEventListener('resize', resize);
 
 const N = 42;
-const nodes = Array.from({length: N}, () => ({
-  x: Math.random()*canvas.width, y: Math.random()*canvas.height,
-  vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25,
-  r: Math.random()*1.8+1
+const nodes = Array.from({ length: N }, () => ({
+  x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+  vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+  r: Math.random() * 1.8 + 1
 }));
 
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   nodes.forEach(a => {
     a.x += a.vx; a.y += a.vy;
-    if (a.x<0||a.x>canvas.width) a.vx*=-1;
-    if (a.y<0||a.y>canvas.height) a.vy*=-1;
+    if (a.x < 0 || a.x > canvas.width) a.vx *= -1;
+    if (a.y < 0 || a.y > canvas.height) a.vy *= -1;
   });
-  for (let i=0;i<N;i++) for (let j=i+1;j<N;j++){
-    const a=nodes[i], b=nodes[j];
-    const dist = Math.hypot(a.x-b.x, a.y-b.y);
-    if (dist < 130){
-      ctx.strokeStyle = `rgba(150,160,190,${1-dist/130})`;
+  for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+    const a = nodes[i], b = nodes[j];
+    const dist = Math.hypot(a.x - b.x, a.y - b.y);
+    if (dist < 130) {
+      ctx.strokeStyle = `rgba(150,160,190,${1 - dist / 130})`;
       ctx.lineWidth = 0.6;
-      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
     }
   }
-  nodes.forEach((a,i) => {
-    ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+  nodes.forEach((a, i) => {
+    ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
     ctx.fillStyle = i % 5 === 0 ? '#ffb37b' : '#7c5cff';
     ctx.fill();
   });
