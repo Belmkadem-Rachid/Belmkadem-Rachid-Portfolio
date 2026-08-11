@@ -43,7 +43,7 @@ letters.forEach((char, i) => {
 
 /*=============== HOME TYPED JS ===============*/
 const typedHome = new Typed('#home-typed', {
-  strings: [' Discourse Researcher', 'data analyst', ],
+  strings: [' Discourse Researcher', 'data analyst',],
   typeSpeed: 60,
   backSpeed: 30,
   backDelay: 2000,
@@ -94,7 +94,7 @@ experienceTabs.forEach(tab => {
 })
 
 
-/*=============== SERVICES ACCORDION ===============*/
+/*=============== FOOTER NETWORK CANVAS ===============*/
 const canvas = document.getElementById('footer-net');
 const ctx = canvas.getContext('2d');
 function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
@@ -143,9 +143,68 @@ draw();
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
 
+const scrollActive = () => {
+  const scrollY = window.scrollY
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight,
+      sectionTop = section.offsetTop - 58,
+      sectionId = section.getAttribute('id'),
+      sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+    if (!sectionsClass) return
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      sectionsClass.classList.add('active-link')
+    } else {
+      sectionsClass.classList.remove('active-link')
+    }
+  })
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== CUSTOM CURSOR ===============*/
 
 
 /*=============== SCROLLREVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: 'bottom',
+  distance: '50px',
+  duration: 900,
+  delay: 100,
+  reset: false, // set to true if you want the animation to replay every time you scroll back up
+})
+
+// Home
+sr.reveal(`.home__data`, { delay: 200 })
+sr.reveal(`.home__images`, { delay: 350, origin: 'right', distance: '60px' })
+sr.reveal(`.home .blob-small`, { delay: 100, duration: 1400 })
+
+// About
+sr.reveal(`.about__image-wrapper`, { origin: 'left', distance: '60px' })
+sr.reveal(`.about__description`, { interval: 150 })
+sr.reveal(`.about__tech`, { delay: 200 })
+sr.reveal(`.about__stats`, { delay: 250 })
+sr.reveal(`.about__button`, { delay: 300 })
+
+// Section titles (every section, animate the heading in first)
+sr.reveal(`.section__title`, { delay: 50 })
+
+// Work cards, staggered
+sr.reveal(`.work__card`, { interval: 120, distance: '40px' })
+
+// Experience
+sr.reveal(`.experience__tabs`, { origin: 'left', distance: '40px' })
+sr.reveal(`.experience__panels`, { origin: 'right', distance: '40px', delay: 150 })
+
+// Skills cards, staggered
+sr.reveal(`.skills__card`, { interval: 100, distance: '40px' })
+
+// Contact cards, staggered
+sr.reveal(`.contact__description`, { delay: 100 })
+sr.reveal(`.contact__card`, { interval: 120, distance: '40px' })
+
+// Footer
+sr.reveal(`.footer-content`, { delay: 100 })
