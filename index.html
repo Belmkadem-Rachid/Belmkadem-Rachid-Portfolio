@@ -10,6 +10,11 @@
 
     <!--=============== FAVICON ===============-->
 
+    <!--=============== GOOGLE FONTS ===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
     <!--=============== REMIXICONS - Insert link for icons ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
 
@@ -33,21 +38,14 @@
                     <li>
                         <a href="#home" class="nav__link active-link">Home</a>
                     </li>
-
                     <li>
                         <a href="#work" class="nav__link">Works</a>
                     </li>
-
                     <li>
                         <a href="#experience" class="nav__link">Experience</a>
                     </li>
-
                     <li>
                         <a href="#skills" class="nav__link">Skills</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="nav__contact">Contact me</a>
                     </li>
                 </ul>
 
@@ -57,10 +55,17 @@
                 </button>
             </div>
 
-            <!-- Toggle -->
-            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
-                <i class="ri-menu-line"></i>
-            </button>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Change accent color">
+                    <i class="ri-palette-line"></i>
+                </button>
+
+                <a href="#contact" class="nav__contact">Contact me</a>
+
+                <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -95,7 +100,7 @@
                     <div class="home__box-1"></div>
                     <div class="home__box-2"></div>
                     <div class="home__box-3"></div>
-                    <img src="images/aboutyy.png" alt="Rachid" class="home__img">
+                    <img src="images/aboutyy.png" alt="Rachid" class="home__img" width="300" height="400">
                     <div class="blob-big"></div>
 
                     <div class="home__circle">
@@ -110,11 +115,11 @@
 
         <!--==================== ABOUT SECTION ====================-->
         <section class="about section" id="about">
-            <h2 class="section__title">About <span>Me</span></h2>
+            <h2 class="section__title container"><span class="section__title-mark"></span>About <span>Me</span></h2>
 
             <div class="about__container container grid">
                 <div class="about__image-wrapper">
-                    <img src="images/about.png" alt="Rachid" class="about__img">
+                    <img src="images/about.png" alt="Rachid" class="about__img" width="280" height="280">
 
                     <span class="about__tool about__tool-1"><i class="ri-file-code-line"></i></span>
                     <span class="about__tool about__tool-2"><i class="ri-database-2-line"></i></span>
@@ -185,13 +190,13 @@
 
         <!--==================== WORK SECTION ====================-->
         <section class="work section" id="work">
-            <h2 class="section__title">View <span>My Work</span></h2>
+            <h2 class="section__title container"><span class="section__title-mark"></span>View <span>My Work</span></h2>
             <div class="work__container container grid">
                 <div class="work__swiper swiper">
                     <div class="swiper-wrapper">
 
                         <article class="work__card swiper-slide">
-                            <img src="images/weathe 1.png" class="work__img" alt="World Weather dashboard preview">
+                            <img src="images/weathe 1.png" class="work__img" alt="World Weather dashboard preview" width="640" height="400">
                             <h3 class="work__name">World Weather Dashboard</h3>
                             <p class="work__description">
                                 Built a real-time weather dashboard that pulls live conditions from
@@ -213,7 +218,7 @@
 
                         <article class="work__card swiper-slide">
                             <img src="images/insightai_dashboard 2.png" class="work__img"
-                                alt="InsightAI Customer Analytics dashboard preview">
+                                alt="InsightAI Customer Analytics dashboard preview" width="640" height="400">
                             <h3 class="work__name">InsightAI Customer Analytics</h3>
                             <p class="work__description">
                                 Ran NLP sentiment analysis on 568K+ product reviews and found the
@@ -235,7 +240,7 @@
 
                         <article class="work__card swiper-slide">
                             <img src="images/db_sustainability_dashboard.png" class="work__img"
-                                alt="Deutsche Bahn Sustainability Progress Analytics dashboard preview">
+                                alt="Deutsche Bahn Sustainability Progress Analytics dashboard preview" width="640" height="400">
                             <h3 class="work__name">DB Sustainability Analytics</h3>
                             <p class="work__description">
                                 Checked Deutsche Bahn's own reported numbers against its public
@@ -256,7 +261,7 @@
                         </article>
 
                         <article class="work__card swiper-slide">
-                            <img src="images/PR.png" class="work__img" alt="This portfolio site preview">
+                            <img src="images/PR.png" class="work__img" alt="This portfolio site preview" width="640" height="400">
                             <h3 class="work__name">This Portfolio — HTML, CSS &amp; JavaScript</h3>
                             <p class="work__description">
                                 This very site: a hand-built portfolio with no frameworks — a dark,
@@ -308,7 +313,7 @@
 
         <!--==================== EXPERIENCE SECTION ====================-->
         <section class="experience section" id="experience">
-            <h2 class="section__title">My <span>Experience</span></h2>
+            <h2 class="section__title container"><span class="section__title-mark"></span>My <span>Experience</span></h2>
 
             <div class="experience__container container">
                 <div class="experience__content">
@@ -393,7 +398,7 @@
 
         <!--==================== SKILLS SECTION ====================-->
         <section class="skills section" id="skills">
-            <h2 class="section__title">My <span>Skills</span></h2>
+            <h2 class="section__title container"><span class="section__title-mark"></span>My <span>Skills</span></h2>
 
             <div class="skills__container container grid">
                 <div class="skills__card">
@@ -449,7 +454,7 @@
 
         <!--==================== CONTACT SECTION ====================-->
         <section class="contact section" id="contact">
-            <h2 class="section__title">Contact <span>Me</span></h2>
+            <h2 class="section__title container"><span class="section__title-mark"></span>Contact <span>Me</span></h2>
 
             <div class="contact__container container grid">
                 <p class="contact__description">
@@ -460,7 +465,7 @@
                 <div class="contact__links">
                     <a href="https://www.linkedin.com/in/rachid-belmkadem-35b971224/" target="_blank"
                         class="contact__card">
-                        <i class="ri-linkedin-fill"></i>
+                        <span class="contact__icon"><i class="ri-linkedin-fill"></i></span>
                         <div>
                             <h3 class="contact__card-title">LinkedIn</h3>
                             <span class="contact__card-detail">Connect with me</span>
@@ -468,7 +473,7 @@
                     </a>
 
                     <a href="https://github.com/Belmkadem-Rachid" target="_blank" class="contact__card">
-                        <i class="ri-github-fill"></i>
+                        <span class="contact__icon"><i class="ri-github-fill"></i></span>
                         <div>
                             <h3 class="contact__card-title">GitHub</h3>
                             <span class="contact__card-detail">See my code</span>
@@ -476,7 +481,7 @@
                     </a>
 
                     <a href="mailto:belmkademrachid50@gmail.com" class="contact__card">
-                        <i class="ri-mail-fill"></i>
+                        <span class="contact__icon"><i class="ri-mail-fill"></i></span>
                         <div>
                             <h3 class="contact__card-title">Email</h3>
                             <span class="contact__card-detail">belmkademrachid50@gmail.com</span>
@@ -488,23 +493,18 @@
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <footer class="site-footer">
-            <canvas id="footer-net"></canvas>
-            <div class="footer-content">
-                <p class="footer-copy">
-                    &copy; 2026 <span class="name">Rachid Belmkaddem</span>
-                    &nbsp;<span class="node-dot"></span>&nbsp;
-                    connecting data and discourse, one node at a time
-                </p>
-            </div>
-        </footer>
+    <footer class="site-footer">
+        <canvas id="footer-net"></canvas>
+        <div class="footer-content">
+            <p class="footer-copy">
+                &copy; 2026 <span class="name">Rachid Belmkaddem</span>
+                &nbsp;<span class="node-dot"></span>&nbsp;
+                connecting data and discourse, one node at a time
+            </p>
+        </div>
     </footer>
 
     <!--========== SCROLL UP ==========-->
-
-    <!--=============== SCROLLREVEAL - Insert link for animations ===============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 
     <!--=============== TYPED JS - Insert link for text animations ===============-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
