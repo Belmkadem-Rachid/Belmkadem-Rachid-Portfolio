@@ -203,3 +203,34 @@ const scrollActive = () => {
   })
 }
 window.addEventListener('scroll', scrollActive)
+
+/*=============== SCROLL REVEAL (section to section) ===============*/
+;(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduceMotion || !('IntersectionObserver' in window)) return
+
+  const items = []
+  document.querySelectorAll('section.section:not(.home)').forEach(section => {
+    const parts = section.querySelectorAll(':scope > .section__title, :scope > .container:not(.section__title) > *')
+    parts.forEach((el, i) => {
+      el.classList.add('reveal')
+      el.style.setProperty('--reveal-delay', `${Math.min(i, 4) * 0.12}s`)
+      items.push(el)
+    })
+  })
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return
+      const el = entry.target
+      el.classList.add('is-visible')
+      revealObserver.unobserve(el)
+      el.addEventListener('transitionend', () => {
+        el.classList.remove('reveal', 'is-visible')
+        el.style.removeProperty('--reveal-delay')
+      }, { once: true })
+    })
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' })
+
+  items.forEach(el => revealObserver.observe(el))
+})()
