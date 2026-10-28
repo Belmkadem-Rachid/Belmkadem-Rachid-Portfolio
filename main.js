@@ -64,7 +64,7 @@ if (homeText) {
 /*=============== HOME TYPED JS ===============*/
 if (document.getElementById('home-typed')) {
   const typedHome = new Typed('#home-typed', {
-    strings: [' Discourse Researcher', 'data analyst',],
+    strings: [' Discourse Researcher', ' NLP Enthusiast'],
     typeSpeed: 60,
     backSpeed: 30,
     backDelay: 2000,
